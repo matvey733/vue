@@ -9,13 +9,15 @@
 </head>
 <body>
   <div id="app">
-    <h2>{{ title }}</h2>
-    <h3>Authored by: {{ author }}</h3>
-    <p>Rating: {{ rating }}/10</p>
-    <button @click="changeShowBooks">Toggle books</button>
+    <button @click="toggleShowBooks">
+      <span v-if="showBooks">Hide Books</span>
+      <span v-if="!showBooks">Show Books</span>
+    </button>
 
     <div v-if="showBooks">
-      <button @click="changeTitle('the 7 habits of effective people')">Change title</button>
+      <h2>{{ title }}</h2>
+      <h3>Authored by: {{ author }}</h3>
+      <p>Rating: {{ rating }}/10</p>
     </div>
   </div>
   <script src="./app.js"></script>
