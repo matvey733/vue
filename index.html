@@ -12,8 +12,11 @@
     <h2>{{ title }}</h2>
     <h3>Authored by: {{ author }}</h3>
     <p>Rating: {{ rating }}/10</p>
+    <button @click="changeShowBooks">Toggle books</button>
 
-    <button @click="changeTitle">Change title</button>
+    <div v-if="showBooks">
+      <button @click="changeTitle('the 7 habits of effective people')">Change title</button>
+    </div>
   </div>
   <script src="./app.js"></script>
 </body>

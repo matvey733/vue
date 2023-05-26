@@ -3,14 +3,13 @@ const app = Vue.createApp({
     return {
       title: "the subtle art of not giving a fuck".toUpperCase(),
       author: "Mark Manson",
-      rating: 10
+      rating: 10,
+      showBooks: true
     }
   },
   methods: {
-    changeTitle() {
-      const min = 10;
-      const max = 20;
-      this.title = Math.round(Math.random() * (max - min) + min);
+    changeShowBooks() {
+      this.showBooks = !this.showBooks;
     }
   }
 });
