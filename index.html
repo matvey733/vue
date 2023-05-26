@@ -11,7 +11,9 @@
   <div id="app">
     <h2>{{ title }}</h2>
     <h3>Authored by: {{ author }}</h3>
-    <p>Rating: {{ rating }}</p>
+    <p>Rating: {{ rating }}/10</p>
+
+    <button @click="title = Math.random()">Randomize title</button>
   </div>
   <script src="./app.js"></script>
 </body>
