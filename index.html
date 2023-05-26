@@ -19,6 +19,9 @@
       <h3>Authored by: {{ author }}</h3>
       <p>Rating: {{ rating }}/10</p>
     </div>
+
+    <div v-show="showBooks">showing the fucking books right fucking now!</div>
+    <div v-show="!showBooks">not showing the fucking books right fucking now!</div>
   </div>
   <script src="./app.js"></script>
 </body>
