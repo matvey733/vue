@@ -5,6 +5,13 @@ const app = Vue.createApp({
       author: "Mark Manson",
       rating: 10
     }
+  },
+  methods: {
+    changeTitle() {
+      const min = 10;
+      const max = 20;
+      this.title = Math.round(Math.random() * (max - min) + min);
+    }
   }
 });
 
