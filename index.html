@@ -5,19 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="./styles.css">
   <title>Vue</title>
-  <style>
-    .box {
-      padding: 50px 0;
-      font-size: 2rem;
-      width: 400px;
-      text-align: center;
-      background-color: royalblue;
-      margin: 20px;
-      display: inline-block;
-      color: white;
-    }
-  </style>
 </head>
 <body>
   <div id="app">
@@ -32,10 +21,12 @@
       <p>Rating: {{ rating }}/10</p>
     </div>
 
-    <div class="box" @mouseover="handleEvent($event, 'this is the value')">mouseover</div>
-    <div class="box" @mouseleave="handleEvent">mouseleave</div>
-    <div class="box" @dblclick="handleEvent">doubleclick</div>
-    <div class="box" @mousemove="handleMousemove">X:{{ x }} Y:{{ y }}</div>
+    <div class="boxes">
+      <div class="box" @mouseover="handleEvent($event, 'this is the value')">mouseover</div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">doubleclick</div>
+      <div class="box" @mousemove="handleMousemove">X:{{ x }} Y:{{ y }}</div>
+    </div>
 
     <ul>
       <li v-for="user in users">
@@ -44,6 +35,6 @@
       </li>
     </ul>
   </div>
-  <script src="./app.js"></script>
+  <script src="app.js" type="module"></script>
 </body>
 </html>
