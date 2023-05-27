@@ -1,15 +1,18 @@
 const books = [
   {
-    name: "the subtle art of not giving a fuck",
-    author: "Mark Manson"
+    title: "the subtle art of not giving a fuck",
+    author: "Mark Manson",
+    isFav: true
   },
   {
-    name: "The 7 habits of effective people",
-    author: "Covey"
+    title: "The 7 habits of effective people",
+    author: "Covey",
+    isFav: false
   },
   {
-    name: "The 7 habits of effective teens",
-    author: "Sean Covey"
+    title: "The 7 habits of effective teens",
+    author: "Sean Covey",
+    isFav: true
   }
 ]
 

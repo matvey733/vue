@@ -19,11 +19,26 @@
       <a v-bind:href="url" target="_blank" ref="noopener noreferrer">Click me</a>
     </div>
 
-    <div v-show="showBooks">
-      <ul class="books-list">
-        <li v-for="book in books">
-          <h3>{{ book.name }}</h3>
+    <div v-show="showBooks" class="books">
+      <h3 class="books-section-title">Books I have read</h3>
+      <ul>
+        <li
+          v-for="book in books"
+          :class="`book ${book.isFav ? 'favorite' : ''}`"
+          @click="toggleFavBook(book)"
+        >
+          <h3 class="book-name">{{ book.title }}</h3>
           <p>Authored by: {{ book.author }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="fav-books" v-show="showBooks">
+      <h3 class="books-section-title">My favorite books</h3>
+      <ul class="books-list">
+        <li v-for="favBook in favBooks"class="book favorite">
+          <h4 class="fav-book-name">{{ favBook.title.toUpperCase() }}</h4>
+          <h5>Author: {{ favBook.author }}</h5>
         </li>
       </ul>
     </div>

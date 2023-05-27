@@ -13,6 +13,14 @@ const app = Vue.createApp({
     toggleShowBooks() {
       this.showBooks = !this.showBooks;
     },
+    toggleFavBook(book) {
+      book.isFav = !book.isFav;
+    }
+  },
+  computed: {
+    favBooks() {
+      return this.books.filter(book => book.isFav);
+    }
   }
 });
 
