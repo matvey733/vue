@@ -10,30 +10,23 @@
 </head>
 <body>
   <div id="app">
-    <button @click="toggleShowBooks">
+    <button @click="toggleShowBooks" class="btn">
       <span v-if="showBooks">Hide Books</span>
       <span v-else>Show Books</span>
     </button>
 
-    <div v-if="showBooks">
-      <h2>{{ title }}</h2>
-      <h3>Authored by: {{ author }}</h3>
-      <p>Rating: {{ rating }}/10</p>
+    <div>
+      <a v-bind:href="url" target="_blank" ref="noopener noreferrer">Click me</a>
     </div>
 
-    <div class="boxes">
-      <div class="box" @mouseover="handleEvent($event, 'this is the value')">mouseover</div>
-      <div class="box" @mouseleave="handleEvent">mouseleave</div>
-      <div class="box" @dblclick="handleEvent">doubleclick</div>
-      <div class="box" @mousemove="handleMousemove">X:{{ x }} Y:{{ y }}</div>
+    <div v-show="showBooks">
+      <ul class="books-list">
+        <li v-for="book in books">
+          <h3>{{ book.name }}</h3>
+          <p>Authored by: {{ book.author }}</p>
+        </li>
+      </ul>
     </div>
-
-    <ul>
-      <li v-for="user in users">
-        <h3>{{ user.name }}</h3>
-        <p>{{ user.email }}</p>
-      </li>
-    </ul>
   </div>
   <script src="app.js" type="module"></script>
 </body>

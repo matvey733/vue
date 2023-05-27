@@ -1,30 +1,18 @@
-import users from "./users.js";
+import books from "./books.js";
 
 
 const app = Vue.createApp({
   data() {
     return {
-      title: "the subtle art of not giving a fuck".toUpperCase(),
-      author: "Mark Manson",
-      rating: 10,
+      url: "https://www.thenetninja.co.uk",
       showBooks: true,
-      x: 0,
-      y: 0,
-      users
+      books
     }
   },
   methods: {
     toggleShowBooks() {
       this.showBooks = !this.showBooks;
     },
-    handleEvent(e, val) {
-      console.log(e);
-      if (val) console.log(val);
-    },
-    handleMousemove(e) {
-      this.x = e.offsetX;
-      this.y = e.offsetY;
-    }
   }
 });
 
