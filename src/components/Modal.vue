@@ -1,6 +1,8 @@
 <template>
-  <div class="backdrop" :class="{ active: isActive }" @click="closeModal">
+  <div class="backdrop" :class="{ active: isActive }" @click.self="closeModal">
     <div class="modal">
+      <slot name="links" />
+      <slot name="content" />
       <p>Vue isn't that bad actually</p>
       <h1>{{ content }}</h1>
     </div>
