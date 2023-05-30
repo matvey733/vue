@@ -4,7 +4,7 @@
   <button @click="toggleModal">Toggle modal</button>
   <br />
   <button @click="appendToModalContent">Append an exclamation mark to uhhh</button>
-  <Modal :content="modalContent" :isActive="isModalActive" />
+  <Modal :content="modalContent" :isActive="isModalActive" @close="toggleModal" />
 </template>
 
 

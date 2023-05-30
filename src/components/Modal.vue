@@ -1,5 +1,5 @@
 <template>
-  <div :class="`backdrop ${isActive ? 'active' : ''}`">
+  <div class="backdrop" :class="{ active: isActive }" @click="closeModal">
     <div class="modal">
       <p>Vue isn't that bad actually</p>
       <h1>{{ content }}</h1>
@@ -12,7 +12,12 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  props: ["content", "isActive"]
+  props: ["content", "isActive"],
+  methods: {
+    closeModal() {
+      this.$emit("close");
+    }
+  }
 })
 </script>
 
@@ -56,5 +61,6 @@ export default defineComponent({
 
 .backdrop.active {
   opacity: 1;
+  pointer-events: all;
 }
 </style>
