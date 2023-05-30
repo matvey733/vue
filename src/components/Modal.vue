@@ -1,18 +1,10 @@
 <template>
   <div class="backdrop" :class="{ active: isActive }" @click.self="closeModal">
     <div class="modal">
-      <slot name="links">
-        <div>
-          <a href="mailto:johndoe@gmail.com">default link</a>
-        </div>
-      </slot>
-      <slot name="content">
-        <div>
-          default content
-        </div>
-      </slot>
-      <p>Vue isn't that bad actually</p>
-      <h1>{{ content }}</h1>
+      <slot />
+      <div class="buttons">
+        <slot name="buttons" />
+      </div>
     </div>
   </div>
 </template>
@@ -36,9 +28,18 @@ export default defineComponent({
   --transition-time: 300ms;
 }
 
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 
 .modal {
   min-width: 300px;
+  max-width: 600px;
   position: fixed;
   top: 50%;
   left: 50%;
