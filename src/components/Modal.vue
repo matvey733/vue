@@ -24,10 +24,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-:root {
-  --transition-time: 300ms;
-}
-
 .buttons {
   margin-top: 15px;
   display: flex;
@@ -38,6 +34,7 @@ export default defineComponent({
 
 
 .modal {
+  transition: 300ms;
   min-width: 300px;
   max-width: 600px;
   position: fixed;
@@ -49,7 +46,6 @@ export default defineComponent({
   color: black;
   border-radius: 5px;
   padding: 15px 30px;
-  transition: var(--transition-time);
   opacity: 0;
 }
 
@@ -59,7 +55,7 @@ export default defineComponent({
 }
 
 .backdrop {
-  transition: var(--transition-time);
+  transition: 300ms;
   position: fixed;
   top: 0;
   left: 0;

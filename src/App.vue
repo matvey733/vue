@@ -5,7 +5,6 @@
   <br />
   <button @click.alt="toggleModal2">Open modal 2 (hold <kbd>alt</kbd> on windows or <kbd>option</kbd> on mac)</button>
   <br />
-  <button @click="appendToModalContent">Append an exclamation mark to hhyhyuijurt5fgt</button>
 
   <Modal :isActive="isModal1Active" @close="toggleModal1">
     <template v-slot:buttons>
@@ -59,16 +58,12 @@ export default defineComponent({
   data() {
     return {
       isModal1Active: false,
-      isModal2Active: false,
-      modalContent: "Hello today is may 30th"
+      isModal2Active: false
     }
   },
   methods: {
     toggleModal1() { this.isModal1Active = !this.isModal1Active; },
     toggleModal2() { this.isModal2Active = !this.isModal2Active; },
-    appendToModalContent() {
-      this.modalContent += "!";
-    }
   },
 });
 </script>
