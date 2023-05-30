@@ -1,17 +1,18 @@
 <template>
-  <div class="backdrop active">
+  <div :class="`backdrop ${isActive ? 'active' : ''}`">
     <div class="modal">
       <p>Vue isn't that bad actually</p>
-      <h1>modal title</h1>
+      <h1>{{ content }}</h1>
     </div>
   </div>
 </template>
+
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-
+  props: ["content", "isActive"]
 })
 </script>
 
@@ -19,6 +20,7 @@ export default defineComponent({
 :root {
   --transition-time: 300ms;
 }
+
 
 .modal {
   min-width: 300px;
