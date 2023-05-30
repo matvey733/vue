@@ -40,7 +40,7 @@ export default defineComponent({
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, calc(-50% + 20px));
+  transform: translate(-50%, calc(-50% - 20px));
   border: 2px solid black;
   background-color: white;
   color: black;
@@ -51,7 +51,7 @@ export default defineComponent({
 
 .backdrop.active .modal {
   opacity: 1;
-  transform: translate(-50%, calc(-50%));
+  transform: translate(-50%, -50%);
 }
 
 .backdrop {
