@@ -2,8 +2,11 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <h1>main title</h1>
   <button @click="toggleModal">Toggle modal</button>
-  <Modal :content="'this is the content'" :isActive="isModalActive" />
+  <br />
+  <button @click="appendToModalContent">Append an exclamation mark to uhhh</button>
+  <Modal :content="modalContent" :isActive="isModalActive" />
 </template>
+
 
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -16,16 +19,21 @@ export default defineComponent({
   },
   data() {
     return {
-      isModalActive: false
+      isModalActive: false,
+      modalContent: "Hello today is may 30th"
     }
   },
   methods: {
     toggleModal() {
       this.isModalActive = !this.isModalActive;
+    },
+    appendToModalContent() {
+      this.modalContent += "!";
     }
   },
 });
 </script>
+
 
 <style>
 
